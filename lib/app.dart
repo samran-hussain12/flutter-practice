@@ -114,7 +114,7 @@ class UserProfile extends StatelessWidget {
                             height: 60,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                                color: Colors.cyanAccent,
+                                color: const Color.fromARGB(255, 200, 219, 52)RGB(255, 255, 190, 24),
                                 borderRadius: BorderRadius.circular(16)),
                             child: Center(
                               child: Row(
