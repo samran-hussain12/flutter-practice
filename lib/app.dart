@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
 
+//i am currently learn the flutter
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,9 +50,10 @@ class UserProfile extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 80,
-                          backgroundColor: const Color.fromARGB(255, 24, 13, 123),
+                          backgroundColor:
+                              const Color.fromARGB(255, 24, 13, 123),
                           backgroundImage: AssetImage('assets/samran.png'),
-                        ),  
+                        ),
                         Container(
                           height: 56,
                           width: double.infinity,
