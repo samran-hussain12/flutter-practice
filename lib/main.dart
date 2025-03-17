@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/app.dart';
+import 'package:project/button.dart';
 import 'package:project/declerationsreen.dart';
 //import 'appbaar.dart';
 import 'app.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyHo  mePage(title: 'Flutter Demo Home Page'),
-      home: UserProfile(),
+      home:  ButtonDemoScreen(),
     );
   }
 }

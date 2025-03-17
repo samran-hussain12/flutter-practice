@@ -23,16 +23,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
       elevation: 10.0,
       centerTitle: true,
-      buttons:[
-        IconButton(
-          icon: const Icon(Icons.search),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: const Icon(Icons.settings),
-          onPressed: () {},
-        ),
-      ],
     );
   }
 
