@@ -64,17 +64,17 @@ class ButtonDemoScreen extends StatelessWidget {
               onPressed: () {}, icon: Icon(Icons.remove_red_eye_outlined)),
           OutlinedButton(
             onPressed: () {},
-            child: Text("Outline Button"),
             style: OutlinedButton.styleFrom(
                 backgroundColor: Colors.amberAccent,
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
                   strokeAlign: 12,
                 ))),
+            child: Text("Outline Button"),
           ),
           GestureDetector(
             onTap: () {},
-            child: Container(
+            child: SizedBox(
               height: 60,
               width: 150,
               child: Text("Gesture Decete"),

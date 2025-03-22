@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/app.dart';
-import 'package:project/button.dart';
-import 'package:project/declerationsreen.dart';
+import 'package:project/Login_page.dart';
 //import 'appbaar.dart';
-import 'app.dart';
-import "scrolling.dart";
 
 
 void main() {
@@ -23,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyHo  mePage(title: 'Flutter Demo Home Page'),
-      home: ScrollingDemoScreen(),
+      home: LoginPage(),
     );
   }
 }
