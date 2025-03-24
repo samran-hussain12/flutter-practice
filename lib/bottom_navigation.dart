@@ -11,36 +11,45 @@ class BottomNavigationBarWidget extends StatefulWidget {
 class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Center(
-        child: Text('Home Page',
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue))),
-    Center(
-        child: Text('Search Page',
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.green))),
-    Center(
-        child: Text('Notifications',
-            style: TextStyle(
-                fontSize: 22, fontWeight: FontWeight.bold, color: Colors.red))),
-    Center(
-        child: Text('Profile Page',
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.purple))),
-    Center(
-        child: Text('Settings Page',
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.orange))),
+  static const String imageUrl =
+      'https://source.unsplash.com/300x200/?technology,nature'; // Network image URL
+
+  static List<Widget> _widgetOptions = <Widget>[
+    buildPage('Home Page', Colors.blue),
+    buildPage('Search Page', Colors.green),
+    buildPage('Notifications', Colors.red),
+    buildPage('Profile Page', Colors.purple),
+    buildPage('Settings Page', Colors.orange),
   ];
+
+  static Widget buildPage(String text, Color color) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(15), // Rounded corners
+          child: FadeInImage.assetNetwork(
+            placeholder:
+                'assets/loading.gif', // Ensure you add a loading GIF or use a built-in progress indicator
+            image: imageUrl,
+            height: 150,
+            width: 150,
+            fit: BoxFit.cover,
+            imageErrorBuilder: (context, error, stackTrace) => Icon(
+                Icons.broken_image,
+                size: 100,
+                color: Colors.red), // Error handling
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          text,
+          style: TextStyle(
+              fontSize: 22, fontWeight: FontWeight.bold, color: color),
+        ),
+      ],
+    );
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -84,13 +93,11 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white, // Highlighted item color
-        unselectedItemColor:
-            Colors.grey.shade400, // Default color for unselected items
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey.shade400,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
-        backgroundColor:
-            const Color.fromARGB(221, 118, 173, 25), // Custom background color
+        backgroundColor: const Color.fromARGB(221, 118, 173, 25),
       ),
     );
   }
